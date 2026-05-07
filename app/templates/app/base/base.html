@@ -6,34 +6,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panaderia </title>
+    <title>Ferreteria </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{% static 'base/style.css'%}">
-    <link rel="stylesheet" href="{% static 'crud/agregar.css'%}">
+    <link rel="stylesheet" href="{% static 'base/base.css'%}">
+    <link rel="stylesheet" href="{% static 'crud/agregarr.css'%}">
   
 </head>
 <body>
     <header>
         <div class="container">
-             <p class="logo">Panadería <img src="{%static 'imagenes/LogoTrigo.png'%}" alt="#" class="trigo"></p>
+             <p class="logo">Ferreteria Ferremas</p>
              <nav>
-                {% if perms.app.view_producto %}
-                    <a class="btn-listar"href="{%url 'listar_producto'%}">Lista de panes</a> 
+                {% if perms.app.view_pan %}
+                    <a class="btn-listar"href="{%url 'listar_producto'%}">Lista de Herramientas </a> 
                 {% endif %}
                 
-                {% if perms.app.add_producto %}
-                    <a class="btn-agregar" href="{%url 'agregar_producto'%}">Agregar panes </a>
+                {% if perms.app.add_pan %}
+                    <a class="btn-agregar" href="{%url 'agregar_producto'%}">Agregar Herramientas </a>
                 {% endif %}
+
                     <a class="btn-Volver" href="{%url 'carritocompra'%}">Volver </a>
 
                 {% if user.is_authenticated %}
-                    <a class="btn-cerrar-login" href="{% url 'logout'%}">Cerrar Sesion</a>
+                    <a class="btn-cerrar-login" href="{% url 'logout'%} ">Cerrar Sesion</a>
+                    <a class="user" href="#">@{{ user.username }}</a>
                 {% else %}
                     <a class="btn-login" href="{%url 'login'%}">Iniciar Sesion</a>
                 {% endif %}
+
+
+
+                                                    
+                       <section>
+                        <div class="container">
+                       <div id="indicadores"></div>
+                        </div>
+                        </section>
+
+                        <script>
+                        fetch('https://mindicador.cl/api')
+                        .then(res => res.json())
+                        .then(data => {
+                            document.getElementById('indicadores').innerHTML = `
+                            <p><strong>Dólar:</strong> $${data.dolar.valor}</p>
+                            <p><strong>UF:</strong> $${data.uf.valor}</p>
+                            
+                            `;
+                        });
+                        </script>
                 
              </nav>
         </div>
@@ -56,7 +79,7 @@
                             <h2>CONTACTO</h2>
                             <p>Direccion: AV.Duoucuc</p> 
                             <p>Telefono: + 12 748 494  </p>
-                            <p>Correo electronico: info@panaderia.com</p>
+                            <p>Correo electronico: info@Ferreteria.com</p>
                         </div>
                     </div>
                     
@@ -78,7 +101,7 @@
                     
                 </div>
                 <div class="grupo-2">
-                    <small>&copy; 2023 <b>Todos los derechos Reservados<img src="{% static 'imagenes/LogoTrigo.png'%}" alt="" width="50"></b></small>
+                    <small>&copy; 2026 <b>Todos los derechos Reservados</b></small>
                 </div>
             </footer>
 

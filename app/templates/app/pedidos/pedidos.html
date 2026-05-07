@@ -3,12 +3,12 @@
 <html lang="en">
 <head>
     <title>Pedidos</title>
-    <link rel="stylesheet" href="{% static 'pedidos/Pedidos.css'%}">
+    <link rel="stylesheet" href="{% static 'pedidos/Pedi.css'%}">
 </head>
 <body>
     <header>
         <div class="container">
-            <p class="logo">Pedidos a Domicilios <img src="{%static 'imagenes/LogoTrigo.png'%}"alt="#" class="trigo"></p>
+            <p class="logo">Pedidos a Domicilios</p>
             <nav>
                 <a href="{%url 'home'%}#nuestros-servicios">Volver </a>
                 <a href="{%url 'contacto'%}">Contacto</a>
@@ -23,6 +23,30 @@
                     <a href="{%url 'login'%}">Iniciar Sesion</a>
                 </li>
                 {% endif %}
+
+                                    
+                       <section>
+                        <div class="container">
+                       <div id="indicadores"></div>
+                        </div>
+                        </section>
+
+                        <script>
+                        fetch('https://mindicador.cl/api')
+                        .then(res => res.json())
+                        .then(data => {
+                            document.getElementById('indicadores').innerHTML = `
+                            <p><strong>Dólar:</strong> $${data.dolar.valor}</p>
+                            <p><strong>UF:</strong> $${data.uf.valor}</p>
+                            
+                            `;
+                        });
+                        </script>
+
+
+
+
+
             </nav>
         </div>
     </header>
@@ -33,12 +57,10 @@
             <div class="texto">
 
                 <h2>Pedidos a <span class="color-acento">Domicilio</span></h2>
-                <p>Ofrecemos pedido a domicilio LLamando al + 12 748 494  Lunes a Viernes de 8:00-19:00,y Sabados de 8:00-17:00, Es una excelente opción para aquellos que buscan 
-                    comodidad, variedad, calidad, personalización y ahorro de tiempo. Si quieres disfrutar de 
-                    productos frescos y deliciosos sin tener que salir de casa, pedir a domicilio es la mejor opción para ti.En resumen, ofrecer un servicio de entrega a 
-                    domicilio para una panadería web puede ser una excelente manera de mejorar la experiencia del cliente, aumentar la visibilidad y el alcance del negocio, 
-                    y generar un flujo de ingresos adicional. En un mundo cada vez más digital 
-                    y conectado, esta puede ser una oportunidad clave para diferenciarse de la competencia y crecer en el mercado.
+                <p>Ofrecemos despacho a domicilio llamando al +56 12 748 494, de lunes a viernes de 8:00 a 19:00 y sábados de 8:00 a 17:00. 
+                    Este servicio permite a nuestros clientes comprar herramientas y materiales sin salir de casa, ahorrando tiempo y facilitando sus proyectos.
+                    Es una solución ideal para quienes buscan comodidad, rapidez y disponibilidad de productos, especialmente en compras de mayor volumen o urgencia.
+                    En resumen, el despacho a domicilio mejora la experiencia del cliente, amplía nuestro alcance y nos permite entregar un servicio más eficiente y competitivo en el rubro ferretero.
 
                 </p>
             </div>
@@ -52,7 +74,7 @@
                         <h2>CONTACTO</h2>
                         <p>Direccion: AV.Duoucuc</p> 
                         <p>Telefono: + 12 748 494  </p>
-                        <p>Correo electronico: info@panaderia.com</p>
+                        <p>Correo electronico: info@Ferreteria.com</p>
                     </div>
                 </div>
                 
@@ -74,7 +96,7 @@
                 
             </div>
             <div class="grupo-2">
-                <small>&copy; 2023 <b>Todos los derechos Reservados<img src="{%static 'imagenes/LogoTrigo.png'%}" alt="" width="50px"></b></small>
+                <small>&copy; 2026 <b>Todos los derechos Reservados</small>
             </div>
         </footer>
     </section>

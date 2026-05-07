@@ -4,12 +4,12 @@
 <html lang="en">
 <head>
     <title>Innovación</title>
-    <link rel="stylesheet" href="{% static 'innovacion/innovacion.css'%}">
+    <link rel="stylesheet" href="{% static 'innovacion/inova.css'%}">
 </head>
 <body>
     <header>
         <div class="container">
-            <p class="logo">Innovación<img src="{%static 'imagenes/LogoTrigo.png'%}" alt="#" class="trigo"></p>
+            <p class="logo">InnovaciónFerramas</p>
             <nav>
                 <a href="{%url 'home'%}#nuestros-servicios">Volver </a>
                 <a href="{%url 'contacto'%}">Contacto</a>
@@ -24,6 +24,26 @@
                     <a href="{%url 'login'%}">Iniciar Sesion</a>
                 </li>
                 {% endif %}
+
+
+                                                    
+                       <section>
+                        <div class="container">
+                       <div id="indicadores"></div>
+                        </div>
+                        </section>
+
+                        <script>
+                        fetch('https://mindicador.cl/api')
+                        .then(res => res.json())
+                        .then(data => {
+                            document.getElementById('indicadores').innerHTML = `
+                            <p><strong>Dólar:</strong> $${data.dolar.valor}</p>
+                            <p><strong>UF:</strong> $${data.uf.valor}</p>
+                            
+                            `;
+                        });
+                        </script>
                 
             </nav>
         </div>
@@ -35,10 +55,10 @@
             <div class="texto">
 
                 <h2>Inno<span class="color-acento">vacion</span></h2>
-                <p>Apostamos por la innovación y el desarrollo de nuevos productos, diferenciales, 
-                    que destaquen tanto por su sabor y calidad.La panadería ha sido un negocio tradicional 
-                    durante muchos años, pero con el avance de la tecnología y la creciente demanda de productos saludables, hay una gran oportunidad de innovar en este sector. En lugar de simplemente ofrecer panes y pasteles tradicionales, nuestra panadería podría ofrecer una amplia variedad de productos innovadores y saludables que atraigan a una base de clientes cada vez mayor.
-                    Una posible idea es crear una línea de productos sin gluten o sin azúcar, para aquellos que tienen necesidades dietéticas especiales. También podríamos utilizar ingredientes orgánicos y de origen local, para atraer a aquellos que buscan alimentos más saludables y sostenibles. Además, podríamos ofrecer opciones veganas y vegetarianas, para atraer a aquellos que buscan opciones más éticas</p>
+                <p>En FERREMAS apostamos por la innovación incorporando tecnología en nuestra plataforma online para mejorar la experiencia del cliente. 
+                Integramos información actualizada del mercado, como el valor del dólar y la UF, lo que nos permite mantener precios más realistas en productos importados.
+                Esto es especialmente importante en herramientas y materiales que dependen del mercado internacional, ya que sus costos pueden variar constantemente. 
+               </p>
             </div>
         </div>
     </section>
@@ -50,7 +70,7 @@
                         <h2>CONTACTO</h2>
                         <p>Direccion: AV.Duoucuc</p> 
                         <p>Telefono: + 12 748 494  </p>
-                        <p>Correo electronico: info@panaderia.com</p>
+                        <p>Correo electronico: info@Ferreteria.com</p>
                     </div>
                 </div>
                 

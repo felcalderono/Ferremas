@@ -19,5 +19,8 @@ urlpatterns = [
     path ('listar-producto/', listar_producto, name="listar_producto"),
     path ('modificar-producto/<id>/', modificar_producto, name="modificar_producto"),
     path ('eliminar-producto/<id>/', eliminar_producto, name="eliminar_producto"),
+    
+    path('buscar/', buscar_producto, name='buscar_producto'),
+    
 ]
 
