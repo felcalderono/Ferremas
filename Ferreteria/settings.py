@@ -26,9 +26,11 @@ SECRET_KEY = 'django-insecure-v1x)h5mxpbsc#al@m)4n_1-+fn1^!_cn14l#+4j^qy3u+v1**=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost',
+    'ferremas-gamma.vercel.app',
+]
 
 LOGIN_REDIRECT_URL ='/'
 LOGOUT_REDIRECT_URL ='/'
@@ -46,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app',
     'django.contrib.humanize',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -124,7 +127,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = '/ static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
