@@ -34,6 +34,7 @@ ALLOWED_HOSTS = [
 
 LOGIN_REDIRECT_URL ='/'
 LOGOUT_REDIRECT_URL ='/'
+SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"
 
 
 
@@ -113,6 +114,12 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+
+
+
+
+
 
 
 # Internationalization
