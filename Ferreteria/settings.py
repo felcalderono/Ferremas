@@ -29,16 +29,17 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
-    '.vercel.app',
+    'ferremas-gamma.vercel.app',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://ferremas-gamma.vercel.app',
 ]
 
-
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
+
+
 
 
 
