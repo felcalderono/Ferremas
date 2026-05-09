@@ -29,8 +29,20 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
-    'ferremas-gamma.vercel.app',
+    '.vercel.app',
 ]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://ferremas-gamma.vercel.app',
+]
+
+
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
+
+
+
 
 LOGIN_REDIRECT_URL ='/'
 LOGOUT_REDIRECT_URL ='/'
