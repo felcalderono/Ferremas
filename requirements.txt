@@ -8,8 +8,10 @@ Django==6.0.4
 django-admin-interface==0.32.0
 django-colorfield==0.14.0
 django-crispy-forms==2.5
+gunicorn==26.0.0
 idna==3.11
 oauthlib==3.3.1
+packaging==26.2
 pillow==12.2.0
 pycparser==3.0
 PyJWT==2.12.1
