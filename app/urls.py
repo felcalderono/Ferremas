@@ -1,5 +1,6 @@
 from django.urls import path
 from .views import *
+from app.views import api_productos
 
 #Se linkean todas las paginas
 
@@ -21,6 +22,8 @@ urlpatterns = [
     path ('eliminar-producto/<id>/', eliminar_producto, name="eliminar_producto"),
     
     path('buscar/', buscar_producto, name='buscar_producto'),
+    
+    path('api/productos/', api_productos),
     
 ]
 

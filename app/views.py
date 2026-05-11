@@ -8,6 +8,19 @@ from django.contrib.auth.decorators import login_required, permission_required
 from django.http import HttpResponse
 from django.template.loader import render_to_string
 from .models import Pan
+
+from django.http import JsonResponse
+from .models import Producto
+
+def api_productos(request):
+    productos = list(Producto.objects.values())
+    return JsonResponse(productos, safe=False)
+
+
+
+
+
+
 # Create your views here.
 
 def base (request):
