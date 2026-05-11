@@ -12,6 +12,8 @@ from .models import Pan
 from django.http import JsonResponse
 from .models import Producto
 
+
+
 def api_productos(request):
     productos = list(Producto.objects.values())
     return JsonResponse(productos, safe=False)
@@ -64,7 +66,7 @@ def seguimiento (request):
 def agregar_producto(request):
 
     data ={
-''      'form':PanForm()
+      'form':PanForm()
 
     }
     if request.method =='POST':
