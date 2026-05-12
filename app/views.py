@@ -10,12 +10,12 @@ from django.template.loader import render_to_string
 from .models import Pan
 
 from django.http import JsonResponse
-from .models import Producto
+from .models import Pan
 
 
 
 def api_productos(request):
-    productos = list(Producto.objects.values())
+    productos = list(Pan.objects.values())
     return JsonResponse(productos, safe=False)
 
 
