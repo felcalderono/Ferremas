@@ -42,6 +42,7 @@
         document.getElementsByClassName('btn-pagar')[0].addEventListener('click',pagarClicked)
         }
         //Eliminamos todos los elementos del carrito y lo ocultamos
+        
         function pagarClicked(){
             alert("Gracias por la Compra");
             //Elimino todos los elmentos del carrito

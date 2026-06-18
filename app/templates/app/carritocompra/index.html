@@ -8,11 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="{% static 'carritocompra/carrito.css'%}">
+    <link rel="stylesheet" href="{% static 'carritocompra/carritoo.css'%}">
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
     <title>Tienda de Ferreteria</title>
 </head>
-<body>
+<body data-usuario="{{ user.username }}">
     <header>
         <div class="container">
             <p class="logo">Ferreteria Ferremax </p>
@@ -225,7 +225,53 @@
             </div>
         </footer>
     </section>
-    <script src="{%static 'carritocompra/productos.js'%}"></script>
+
+    <div id="modalPago" class="modal-pago">
+
+        <div class="contenido-modal">
+
+            <h2>Pago de Tu Compra</h2>
+
+            <label>Número de Tarjeta</label>
+            <input type="text" id="tarjeta" value="">
+
+            <label>Fecha de Vencimiento</label>
+            <input type="text" id="fecha" value="">
+
+            <label>CVV</label>
+            <input type="text" id="cvv" value="">
+
+            <label>RUN</label>
+            <input type="text" id="run" value="">
+            <label>Tipo de Entrega</label>
+            <select id="tipoEntrega">
+                <option value="">Seleccione una opción</option>
+                <option value="domicilio">Despacho a domicilio</option>
+                <option value="sucursal">Retiro en sucursal</option>
+            </select>
+
+            <label>Dirección</label>
+            <input type="text" id="direccion" placeholder="Ingrese dirección de envío">
+
+            <label>Sucursal</label>
+            <select id="sucursal">
+                <option value="">Seleccione sucursal</option>
+                <option value="Viña del Mar">Viña del Mar</option>
+                <option value="Valparaíso">Valparaíso</option>
+            </select>
+            <button onclick="confirmarPago()">
+                Confirmar Compra
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+
+    <script src="{%static 'carritocompra/productoo.js'%}"></script>
+
 </body>
 </html>
 
